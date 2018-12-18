@@ -19,6 +19,7 @@ Simple terraform script generating random pet and return it in local echo string
 ```
     git clone https://github.com/yaroslav-007/move-state-tfe.git
     cd move-state-tfe
+    export ATLAS_TOKEN=<enter your token here>
     terraform init
     terraform plan
     terraform apply
