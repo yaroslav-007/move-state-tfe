@@ -2,6 +2,11 @@
 ##### we peformed "terraform state mv random_pet.name module.random_pet"
 #####after me put  random_pet into module and perform "terraform apply", zero resources should be added
 
+terraform {
+  backend "atlas" {
+    name    = "yaroslav-org/move-state-tfe"
+  }
+}
 
 #resource "random_pet" "name" {
 # length    = "4"
@@ -14,12 +19,12 @@
 #  }
 #}
 
-resource "null_resource" "hello" {
-  provisioner "local-exec" {
-    command = "echo Hello ${module.random_pet.pet_module}"
-  }
-}
+#resource "null_resource" "hello" {
+#  provisioner "local-exec" {
+#    command = "echo Hello ${module.random_pet.pet_module}"
+#  }
+#}
 
-module "random_pet" {
-  source = "./sample/modules/"
-}
+#module "random_pet" {
+#  source = "./sample/modules/"
+#}
